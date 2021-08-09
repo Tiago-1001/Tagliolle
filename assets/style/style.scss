@@ -15,14 +15,16 @@ body {
 
 #home {
     background-image: url(../images/background-home.jpg);
-    background-size: contain;
+    background-size: cover;
     height: 100vh;
+    width: 100%;
 
     .background-black {
         height: 100vh;
         background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.49) 40.35%, rgba(0, 0, 0, 0.0171845) 55.46%, rgba(0, 0, 0, 0) 100%);
         width: 100%;
         position: absolute;
+        background-repeat: no-repeat;
     }
 
     header {
