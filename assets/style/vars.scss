@@ -1,0 +1,17 @@
+// Colors
+
+$black: #121214;
+$white: #f4f4f4;
+$color-principal: #D0A144;
+
+// Font-sizes
+
+@mixin logo-nav {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+@mixin h1 {
+    font-size: 3.1rem;
+    font-weight: semi-bold;
+}
