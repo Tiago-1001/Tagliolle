@@ -80,4 +80,31 @@ body {
 #home p {
   text-align: center;
 }
+
+.menu {
+  height: 100vh;
+  width: 100%;
+}
+
+.menu .cardapio {
+  margin: 0 10rem 1rem 10rem;
+}
+
+.menu .cardapio .prates {
+  height: 200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 1fr;
+      grid-template-columns: 300px 1fr;
+  margin: 1rem 0;
+}
+
+.menu .cardapio .image {
+  width: 300px;
+  height: 200px;
+}
+
+.menu .cardapio p {
+  display: inline-block;
+}
 /*# sourceMappingURL=style.css.map */
