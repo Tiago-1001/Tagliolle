@@ -97,8 +97,10 @@ body {
         height: 200px;
     }
 
-    p {
-        display: inline-block;
+    .descrition {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     
     .first-prate {
