@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Martel:wght@700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -61,10 +61,11 @@ body {
 
 #home header ul li a {
   cursor: pointer;
+  color: #f4f4f4;
 }
 
 #home header ul li a:hover {
-  color: #D0A144;
+  color: #04d361;
 }
 
 #home h1 {
@@ -74,7 +75,7 @@ body {
   margin: 2rem 2rem 1rem 2rem;
   word-spacing: 5px;
   font-family: 'Martel', sans-serif;
-  color: #D0A144;
+  color: #04d361;
 }
 
 #home p {
@@ -86,25 +87,96 @@ body {
   width: 100%;
 }
 
+.menu main {
+  max-height: 100vh;
+}
+
+.menu main span {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: .3rem;
+  margin-top: 1rem;
+}
+
+.menu main h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem;
+  font-weight: 500;
+}
+
 .menu .cardapio {
-  margin: 0 10rem 1rem 10rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 300px 300px;
+      grid-template-columns: 300px 300px 300px;
+  gap: 4rem;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100vw;
+  margin-top: 5rem;
 }
 
 .menu .cardapio .prates {
-  height: 200px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 300px 1fr;
-      grid-template-columns: 300px 1fr;
-  margin: 1rem 0;
+  max-width: 300px;
+  height: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
 }
 
-.menu .cardapio .image {
-  width: 300px;
-  height: 200px;
-}
-
-.menu .cardapio p {
+.menu .cardapio .prates p:first-of-type {
   display: inline-block;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+
+.menu .cardapio .prates p:first-of-type:after {
+  content: '';
+  display: block;
+  width: 100%;
+  background-color: #04d361;
+  margin-top: .5rem;
+  height: 1px;
+}
+
+.menu .cardapio .prates p:last-of-type {
+  max-width: 100%;
+  margin: 1rem .5rem 0 .5rem;
+}
+
+.menu .cardapio .prates button {
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  border: 1px solid #f4f4f4;
+  background-color: #04d361;
+}
+
+.menu .cardapio .prates button:hover {
+  background-color: #01853c;
+  cursor: pointer;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  background-color: #04d361;
 }
 /*# sourceMappingURL=style.css.map */
