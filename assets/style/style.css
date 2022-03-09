@@ -6,9 +6,13 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #121214;
-  color: #f4f4f4;
+  background-color: #f4f4f4;
+  color: #121214;
   font-family: "Roboto", "Helvetica Neue";
 }
 
@@ -62,36 +66,30 @@ body {
 #home header ul li a {
   cursor: pointer;
   color: #f4f4f4;
+  text-decoration: none;
+  font-size: 1.3rem;
 }
 
 #home header ul li a:hover {
-  color: #04d361;
-}
-
-#home h1 {
-  font-size: 3.1rem;
-  font-weight: semi-bold;
-  text-align: center;
-  margin: 2rem 2rem 1rem 2rem;
-  word-spacing: 5px;
-  font-family: 'Martel', sans-serif;
-  color: #04d361;
+  color: #590219;
 }
 
 #home p {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f4f4f4;
 }
 
-.menu {
-  height: 100vh;
+#menu {
   width: 100%;
+  margin-bottom: 3rem;
 }
 
-.menu main {
-  max-height: 100vh;
-}
-
-.menu main span {
+#menu main span {
   display: block;
   text-transform: uppercase;
   font-weight: bold;
@@ -99,18 +97,18 @@ body {
   margin-top: 1rem;
 }
 
-.menu main h2 {
+#menu main h2 {
   text-align: center;
   font-size: 2rem;
   margin: 2rem;
   font-weight: 500;
 }
 
-.menu .cardapio {
+#menu .cardapio {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 300px 300px 300px;
-      grid-template-columns: 300px 300px 300px;
+  -ms-grid-columns: 230px 230px 230px 230px;
+      grid-template-columns: 230px 230px 230px 230px;
   gap: 4rem;
   justify-items: center;
   -webkit-box-pack: center;
@@ -120,50 +118,51 @@ body {
   margin-top: 5rem;
 }
 
-.menu .cardapio .prates {
-  max-width: 300px;
-  height: 420px;
+#menu .cardapio .prates {
+  max-width: 230px;
+  height: 320px;
+  border: 2px solid #f4f4f4;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
 }
 
-.menu .cardapio .prates p:first-of-type {
-  display: inline-block;
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin: 0 auto;
+#menu .cardapio .prates:hover {
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
 }
 
-.menu .cardapio .prates p:first-of-type:after {
-  content: '';
+#menu .cardapio .prates .image img {
+  width: 101%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+#menu .cardapio .prates p {
+  margin-left: 1rem;
   display: block;
-  width: 100%;
-  background-color: #04d361;
-  margin-top: .5rem;
-  height: 1px;
 }
 
-.menu .cardapio .prates p:last-of-type {
+#menu .cardapio .prates .title-prate {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: .5rem .5rem 1rem 1rem;
+}
+
+#menu .cardapio .prates .descrition-prate {
   max-width: 100%;
-  margin: 1rem .5rem 0 .5rem;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
 }
 
-.menu .cardapio .prates button {
-  margin: 0 auto;
+#maps iframe {
   width: 100%;
-  border: none;
-  border: 1px solid #f4f4f4;
-  background-color: #04d361;
-}
-
-.menu .cardapio .prates button:hover {
-  background-color: #01853c;
-  cursor: pointer;
 }
 
 footer {
@@ -177,6 +176,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 100px;
-  background-color: #04d361;
+  background-color: #590219;
+  color: #f4f4f4;
 }
 /*# sourceMappingURL=style.css.map */

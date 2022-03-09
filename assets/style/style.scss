@@ -7,9 +7,13 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color: $black;
-    color: $white;
+    background-color: $white;
+    color: $black;
     font-family: "Roboto", "Helvetica Neue";
 }
 
@@ -51,6 +55,8 @@ body {
                 a {
                     cursor: pointer;
                     color: $white;
+                    text-decoration: none;
+                    font-size: 1.3rem;
     
                     &:hover {
                             color: $color-principal;
@@ -59,30 +65,18 @@ body {
             }
         }
     }
-    
-    h1 {
-        @include h1();
-        text-align: center;
-        margin: 2rem 2rem 1rem 2rem;
-        word-spacing: 5px;
-        font-family: 'Martel', sans-serif;
-        color: $color-principal;
-
-    }
-    
+        
     p {
-        text-align: center;
+      display: flex;
+      justify-content: center;
+      color: $white;
     }
 }
 
-.menu {
-  height: 100vh;
-    width: 100%;
-    
-
+#menu {
+  width: 100%;
+  margin-bottom: 3rem;
     main {
-      max-height: 100vh;
-
       span {
         display: block;
         text-transform: uppercase;
@@ -90,6 +84,7 @@ body {
         margin: .3rem;
         margin-top: 1rem;
       }
+
       h2 {
         text-align: center;
         font-size: 2rem;
@@ -100,7 +95,7 @@ body {
 
   .cardapio {
     display: grid;
-      grid-template-columns: 300px 300px 300px;
+      grid-template-columns: 230px 230px 230px 230px;
       gap: 4rem;
       justify-items: center;
       justify-content: center;
@@ -109,51 +104,52 @@ body {
       margin-top: 5rem;
 
       .prates {
-        max-width: 300px;
-        height: 420px;
+        max-width: 230px;
+        height: 320px;
+        border: 2px solid $white;
+        cursor: pointer;
 
         display: flex;
-        flex-wrap: wrap;
-
+        flex-direction: column;
         background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 3px;
 
-        p:first-of-type {
-          display: inline-block;
+        &:hover {
+          border: 2px solid #d9d9d9;
+          border-radius: 10px;
+        }
+        .image {
+          img {
+            width: 101%;
+
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+          }
+        }
+
+        p {
+          margin-left: 1rem;
+          display: block;
+        }
+
+        .title-prate {
           font-weight: 500;
-          font-size: 1.5rem;
-          margin: 0 auto;
-
-          &:after { 
-            content: '';
-            display: block;
-            width: 100%;
-            background-color: $color-principal;
-            margin-top: .5rem;
-            height: 1px;
-          }
+          font-size: 1rem;
+          margin: .5rem .5rem 1rem 1rem;
         }
 
-        p:last-of-type {
+        .descrition-prate {
           max-width: 100%;
-          margin: 1rem .5rem 0 .5rem;
-        }
-        
-        button {
-          margin: 0 auto;
+          font-size: 14px;
 
-          width: 100%;
-          border: none;
-          border: 1px solid $white;
-
-          background-color: $color-principal;
-
-          &:hover {
-            background-color:#01853c;
-            cursor: pointer
-          }
+          margin-bottom: 1.5rem;
         }
       }
+  }
+}
+
+#maps {
+  iframe {
+    width: 100%;
   }
 }
 
@@ -163,4 +159,5 @@ footer {
   align-items: center;
   height: 100px;
   background-color: $color-principal;
+  color: $white;
 }
