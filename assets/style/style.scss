@@ -16,6 +16,60 @@ body {
     color: $black;
     font-family: "Roboto", "Helvetica Neue";
 }
+header {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 5rem 1rem 5rem;
+  }
+
+  ul {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      li {
+          list-style: none;
+          margin: 0 1rem;
+
+          a {
+              cursor: pointer;
+              color: $white;
+              text-decoration: none;
+              font-size: 1.3rem;
+
+              &:hover {
+                      color: $color-principal;
+              }
+          }
+      }
+  }
+  @media (max-width: $tablet) {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 2rem 1rem 2rem;
+      
+      .logo-nav img{
+        width: 150px;
+        height: 150px;
+      }
+    }
+    ul {
+      li {
+          margin: 0 2rem;
+
+          a {
+              font-size: 1rem;
+          }
+      }
+    }
+  }
+}
 
 #home {
     background-image: url(../images/background-home.jpg);
@@ -29,48 +83,77 @@ body {
         width: 100%;
         position: absolute;
         background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+          color: $white;
+          font-size: 2rem;
+
+          span {
+            border-bottom: 6px solid $color-complementary;
+          }
+        }
     }
 
-    header {
-        nav {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 10rem 1rem 10rem;
-    
-            .logo-nav {
-                @include logo-nav();
-                font-family: 'Dancing Script';
-            }
+    @media (max-width: $tablet) {
+      .background-black {
+        h4 {
+          font-size: 1rem;
+
+          span {
+            border-bottom: 3px solid $color-complementary;
+          }
         }
-    
-        ul {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-    
-            li {
-                list-style: none;
-                margin: 0 1rem;
-    
-                a {
-                    cursor: pointer;
-                    color: $white;
-                    text-decoration: none;
-                    font-size: 1.3rem;
-    
-                    &:hover {
-                            color: $color-principal;
-                    }
-                }
-            }
-        }
+      }
     }
-        
-    p {
-      display: flex;
-      justify-content: center;
-      color: $white;
+}
+
+#plant--icon {
+  position: absolute;
+  top: 93%;
+  left: 0;
+
+  @media (max-width: $tablet) {
+    img {
+      height: 100px;
     }
+  }
+}
+
+#pizza--icon {
+  position: absolute;
+  top: 245%;
+  right: 5%;
+
+  height: 128.17px;
+  width: 128.17px;
+  border-radius: 50%;
+
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -23px -23px 43px #FFFDF1;
+  filter: drop-shadow(0px 4px 50px rgba(159, 62, 62, 0.23));
+
+  img {
+    position: relative;
+    top: -22px;
+    right: 5px;
+  }
+
+  @media (max-width: $tablet) {
+    height: 120px;
+    width: 120px;
+
+    top: 167%;
+    right: 5%;
+
+    img {
+      height: 130px;
+      top: -15px;
+      right: 1px;
+    }
+  }
 }
 
 #menu {
@@ -145,6 +228,21 @@ body {
         }
       }
   }
+
+  @media (max-width: $tablet) {
+    .cardapio {
+      grid-template-columns: 150px 150px 150px;
+      gap: 4rem;
+
+      .prates {
+        height: 230px;
+      }
+
+      .four-prate {
+        display: none;
+      }
+    }
+  }
 }
 
 #maps {
@@ -160,4 +258,50 @@ footer {
   height: 100px;
   background-color: $color-principal;
   color: $white;
+}
+
+#wpp--icon {
+  position: fixed;
+  right: 2%;
+  bottom: 5px;
+  cursor: pointer;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  main {
+    width: 100%;
+    margin-left: 5rem;
+
+    h2 {
+      margin: 1.5rem 0;
+    }
+
+    h3 {
+      margin: .7rem 0;
+      span {
+        font-weight: 400;
+      }
+    }
+    #andress {
+      display: flex;
+      margin-bottom: 1rem;
+
+      p:first-of-type {
+        font-weight: 600;
+        margin-right: .4rem;
+      }
+    }
+    #numbers {
+      p {
+        margin: .5rem 0;
+      }
+    }
+
+  }
+  
 }
