@@ -139,6 +139,7 @@ header ul li a:hover {
   position: absolute;
   top: 245%;
   right: 5%;
+  z-index: 9;
   height: 128.17px;
   width: 128.17px;
   border-radius: 50%;
@@ -170,12 +171,11 @@ header ul li a:hover {
   }
 }
 
-#menu {
+.menu {
   width: 100%;
-  margin-bottom: 3rem;
 }
 
-#menu main span {
+.menu main span {
   display: block;
   text-transform: uppercase;
   font-weight: bold;
@@ -183,14 +183,14 @@ header ul li a:hover {
   margin-top: 1rem;
 }
 
-#menu main h2 {
+.menu main h2 {
   text-align: center;
   font-size: 2rem;
   margin: 2rem;
   font-weight: 500;
 }
 
-#menu .cardapio {
+.menu .cardapio {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 230px 230px 230px 230px;
@@ -204,7 +204,7 @@ header ul li a:hover {
   margin-top: 5rem;
 }
 
-#menu .cardapio .prates {
+.menu .cardapio .prates {
   max-width: 230px;
   height: 320px;
   border: 2px solid #f4f4f4;
@@ -219,44 +219,44 @@ header ul li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-#menu .cardapio .prates:hover {
+.menu .cardapio .prates:hover {
   border: 2px solid #d9d9d9;
   border-radius: 10px;
 }
 
-#menu .cardapio .prates .image img {
+.menu .cardapio .prates .image img {
   width: 101%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 
-#menu .cardapio .prates p {
+.menu .cardapio .prates p {
   margin-left: 1rem;
   display: block;
 }
 
-#menu .cardapio .prates .title-prate {
+.menu .cardapio .prates .title-prate {
   font-weight: 500;
   font-size: 1rem;
   margin: .5rem .5rem 1rem 1rem;
 }
 
-#menu .cardapio .prates .descrition-prate {
+.menu .cardapio .prates .descrition-prate {
   max-width: 100%;
   font-size: 14px;
   margin-bottom: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  #menu .cardapio {
+  .menu .cardapio {
     -ms-grid-columns: 150px 150px 150px;
         grid-template-columns: 150px 150px 150px;
     gap: 4rem;
   }
-  #menu .cardapio .prates {
+  .menu .cardapio .prates {
     height: 230px;
   }
-  #menu .cardapio .four-prate {
+  .menu .cardapio .four-prate {
     display: none;
   }
 }
@@ -285,6 +285,7 @@ footer {
   right: 2%;
   bottom: 5px;
   cursor: pointer;
+  z-index: 99;
 }
 
 #contact {
@@ -329,5 +330,49 @@ footer {
 
 #contact main #numbers p {
   margin: .5rem 0;
+}
+
+.slider .prates {
+  margin: 30px;
+  max-width: 230px;
+  height: 320px;
+  border: 2px solid #f4f4f4;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.slider .prates:hover {
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.slider .prates .image img {
+  width: 101%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.slider .prates p {
+  margin-left: 1rem;
+  display: block;
+}
+
+.slider .prates .title-prate {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: .5rem .5rem 1rem 1rem;
+}
+
+.slider .prates .descrition-prate {
+  max-width: 100%;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */
