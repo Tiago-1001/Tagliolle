@@ -20,17 +20,87 @@ header {
   position: absolute;
   z-index: 9;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem 1rem 5rem;
+
+  @media (max-width: $tablet) {
+    padding: 0 0 0 1rem;
+    
+  }
+
+  .logo-nav img{
+    @media (max-width: $tablet) {
+      width: 150px;
+      height: 150px;
+    }
+  }
 
   nav {
       display: flex;
       justify-content: space-between;
-      margin: 0 5rem 1rem 5rem;
+
+      @media (max-width: $tablet) {
+        margin: 0 2rem 1rem 2rem;
+      }
+  }
+  #hamburguer {
+    color: #fff;
+    border-top: 3px solid;
+    width: 30px;
+    cursor: pointer;
+    z-index: 102;
+    align-self: center;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+
+    &::after, &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: currentColor;
+      margin-top: 6px;
+    }
   }
 
   ul {
       text-decoration: none;
       display: flex;
       align-items: center;
+      transition: .6s;
+
+      @media (max-width: $tablet) {
+        display: flex;
+        // display: block;
+        justify-content: space-evenly;
+        flex-direction: column;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 100%;
+        height: 0;
+
+        background: $color-principal;
+        z-index: 101;
+
+        visibility: hidden;       
+        
+        li {
+          opacity: 0;
+          transition: .6s;
+          margin: 0 2rem;
+  
+          a {
+            font-size: 1rem;
+            color: #fff;
+          }
+        }
+      }
 
       li {
           list-style: none;
@@ -43,31 +113,43 @@ header {
               font-size: 1.3rem;
 
               &:hover {
-                      color: $color-principal;
+                color: $color-complementary;
               }
           }
       }
   }
-  @media (max-width: $tablet) {
-    nav {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 2rem 1rem 2rem;
-      
-      .logo-nav img{
-        width: 150px;
-        height: 150px;
-      }
-    }
-    ul {
-      li {
-          margin: 0 2rem;
 
-          a {
-              font-size: 1rem;
-          }
+  .active {
+
+    #hamburguer {
+      border-top-color: transparent !important;
+
+      &::after {
+        transform: rotate(-135deg);
+        position: relative;
+        top: -9px;
+        transition: .3s;
+      }
+
+      &::before {
+        transform: rotate(135deg);
+        transition: .3s;
       }
     }
+
+
+    ul {
+      display: flex;
+      height: 60vh;
+      visibility: visible;
+      overflow-y: auto;
+
+      li {
+        opacity: 1;
+      }
+    }
+
+    
   }
 }
 
@@ -100,7 +182,8 @@ header {
     @media (max-width: $tablet) {
       .background-black {
         h4 {
-          font-size: 1rem;
+          font-size: 1.5rem;
+          margin: 0 2rem;
 
           span {
             border-bottom: 3px solid $color-complementary;
@@ -126,7 +209,6 @@ header {
   position: absolute;
   top: 245%;
   right: 5%;
-  z-index: 9;
 
   height: 128.17px;
   width: 128.17px;
@@ -158,90 +240,56 @@ header {
 }
 
 .menu {
-  width: 100%;
-    main {
-      span {
-        display: block;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: .3rem;
-        margin-top: 1rem;
-      }
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem;
+    font-weight: 500;
+  }
+}
 
-      h2 {
-        text-align: center;
-        font-size: 2rem;
-        margin: 2rem;
-        font-weight: 500;
-      }
+.slider .prates {
+  margin: 30px;
+  
+  max-width: 230px;
+  height: 320px;
+  border: 2px solid $color-complementary;
+  border-top: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  .image {
+    img {
+      width: 101%;
+
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
     }
-
-  .cardapio {
-    display: grid;
-      grid-template-columns: 230px 230px 230px 230px;
-      gap: 4rem;
-      justify-items: center;
-      justify-content: center;
-
-      max-width: 100vw;
-      margin-top: 5rem;
-
-      .prates {
-        max-width: 230px;
-        height: 320px;
-        border: 2px solid $white;
-        cursor: pointer;
-
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.2);
-
-        &:hover {
-          border: 2px solid #d9d9d9;
-          border-radius: 10px;
-        }
-        .image {
-          img {
-            width: 101%;
-
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-          }
-        }
-
-        p {
-          margin-left: 1rem;
-          display: block;
-        }
-
-        .title-prate {
-          font-weight: 500;
-          font-size: 1rem;
-          margin: .5rem .5rem 1rem 1rem;
-        }
-
-        .descrition-prate {
-          max-width: 100%;
-          font-size: 14px;
-
-          margin-bottom: 1.5rem;
-        }
-      }
   }
 
-  @media (max-width: $tablet) {
-    .cardapio {
-      grid-template-columns: 150px 150px 150px;
-      gap: 4rem;
+  p {
+    margin-left: 1rem;
+    display: block;
+  }
 
-      .prates {
-        height: 230px;
-      }
+  .title-prate {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: .5rem .5rem 1rem 1rem;
 
-      .four-prate {
-        display: none;
-      }
-    }
+    color: $color-principal;
+  }
+
+  .descrition-prate {
+    max-width: 100%;
+    font-size: 14px;
+
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -307,46 +355,8 @@ footer {
   
 }
 
-.slider .prates {
-  margin: 30px;
-  
-  max-width: 230px;
-  height: 320px;
-  border: 2px solid $white;
-  cursor: pointer;
 
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.2);
-
-  &:hover {
-  border: 2px solid #d9d9d9;
-  border-radius: 10px;
-  }
-  .image {
-    img {
-      width: 101%;
-
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-    }
-  }
-
-  p {
-    margin-left: 1rem;
-    display: block;
-  }
-
-  .title-prate {
-    font-weight: 500;
-    font-size: 1rem;
-    margin: .5rem .5rem 1rem 1rem;
-  }
-
-  .descrition-prate {
-    max-width: 100%;
-    font-size: 14px;
-
-    margin-bottom: 1.5rem;
-  }
+// SLIDER
+.lSSlideWrapper {
+  min-width: 292px;
 }
